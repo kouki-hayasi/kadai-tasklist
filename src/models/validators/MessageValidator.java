@@ -10,16 +10,20 @@ public class MessageValidator {
     public static List<String> validate(Message m){
         List<String> errors =new ArrayList<String>();
 
-        String content_error=validateContent(m.getContent());
-        if(!content_error.equals("")){
+
+        String content_error = validateContent(m.getContent());
+        if(!content_error.equals("")) {
             errors.add(content_error);
         }
+
         return errors;
     }
-    private static String validateContent(String content){
-        if(content==null || content.equals("")){
+    // メッセージの必須入力チェック
+    private static String validateContent(String content) {
+        if(content == null || content.equals("")) {
             return "メッセージを入力してください。";
         }
+
         return "";
     }
 

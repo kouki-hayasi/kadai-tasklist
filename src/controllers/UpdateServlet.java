@@ -62,6 +62,7 @@ public class UpdateServlet extends HttpServlet {
 
                 RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/messages/edit.jsp");
                 rd.forward(request, response);
+            }else{
 
             //データベースの更新
             em.getTransaction().begin();
